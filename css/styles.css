@@ -80,6 +80,11 @@ canvas {
 .t-pincel {
 	background: #d780fa;
 }
+footer {
+	text-align: center;
+	padding: 20px;
+	font-weight: bold;
+}
 
 @media screen and (max-width: 700px) {
 	body {
