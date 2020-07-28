@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Líneas | by brandonporcel</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<meta name="p:domain_verify" content="548c25f3b49305b2ac0d29e9c46e4b99" />
+	</head>
+	<body id="body">
+		<section class="toddy" id="toddy">
+			<div class="contenedor-pruebas">
+				<div class="first-test">
+					<div class="container-lineas">
+						<form class="form-lineas">
+							<p class="num-lineas">
+								<label>Cuantas líneas queres?</label>
+								<input
+									class="input-lineas"
+									type="number"
+									id="input_lineas"
+									placeholder="# de lineas"
+								/>
+							</p>
+
+							<p class="color-lineas">
+								<label for="color"><b>Color de las líneas </b></label>
+								<input type="color" id="color" />
+							</p>
+							<p class="color-fondo">
+								<label><b>Fondo </b></label>
+								<input type="color" id="fondo" />
+							</p>
+							<p class="lugar-lineas">
+								<label for="">Lugar</label>
+								<select id="select-lineas">
+									<option value="abajo,izquierda">Abajo,Izquierda</option>
+									<option value="abajo,derecha">Abajo,Derecha</option>
+									<option value="arriba,izquierda">Arriba,Izquierda</option>
+									<option value="arriba,derecha">Arriba,Derecha</option>
+									<option value="todo">Toddy</option>
+								</select>
+							</p>
+							<p class="t-pincel">
+								<label for="">Tamaño del pincel</label>
+								<select id="tamaño-pincel">
+									<option value="3">3px</option>
+									<option value="5">5px</option>
+									<option value="10">10px</option>
+								</select>
+							</p>
+						</form>
+						<p id="texto-resultado" class="texto-resultado"></p>
+						<div class="dibujar-actualizar">
+							<div class="act-pag" id="act-pag">
+								<input
+									type="button"
+									value="volver a dibujar"
+									onclick="javascript:window.location.reload();"
+								/>
+							</div>
+							<p>
+								<input type="button" value="Dibuje" id="boton" class="boton-lineas" />
+							</p>
+						</div>
+					</div>
+					<div class="canvas-img">
+						<canvas width="300" height="300" id="canvas_lineas"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<p>
+					hecho por <span> <a href="https://instagram.com/brandonporcel">brandonporcel</a> </span>💜</a
+				> 
+				<small>culquier cosa,decime :))</small>
+			</p>
+		</footer>
+
+		<script src="demo.js"></script>
+	</body>
+</html>
