@@ -7,6 +7,8 @@ let fondo = document.getElementById('fondo');
 let lado = document.getElementById('select-lineas');
 let pincel = document.getElementById('tamaño-pincel');
 let botonLineas = document.getElementById('boton');
+let texoPantalla = document.getElementById('texto-resultado');
+let actPagina = document.getElementById('act-pag');
 
 botonLineas.addEventListener('click', dibujoLineasClick);
 
@@ -40,10 +42,12 @@ function dibujoLineasClick() {
 	let fondito = fondo.value;
 	let ladito = lado.value;
 	let pincelito = pincel.value;
+	actPagina.classList.add('active');
 	if (ladito === 'abajo,izquierda') {
-		if (numLineas < 1) {
-			alert('que haces cumpa');
-		} else {
+		if (numLineas < 1 /*  numLineas.length !== '' */ /* numLineas.length == '' */) {
+			texoPantalla.innerHTML = 'pone un numero positivo amigx';
+		} else if (numLineas > 0) {
+			texoPantalla.innerHTML = '';
 			for (l; l < numLineas; l++) {
 				yi = espacio * l;
 				xf = espacio * (l + 1);
@@ -53,8 +57,9 @@ function dibujoLineasClick() {
 		}
 	} else if (ladito === 'abajo,derecha') {
 		if (numLineas < 1) {
-			alert('que haces cumpa');
+			texoPantalla.innerHTML = 'pone un numero positivoamigx';
 		} else {
+			texoPantalla.innerHTML = '';
 			for (l; l < numLineas; l++) {
 				yi = espacio * l;
 				xf = 300 - (l + 1) * espacio;
@@ -63,32 +68,42 @@ function dibujoLineasClick() {
 			}
 		}
 	} else if (ladito === 'arriba,izquierda') {
-		for (l = 0; l < numLineas; l++) {
-			yi = 300 - l * espacio;
-			xf = (l + 1) * espacio;
-			dibujarLineas(colorcito, 0, yi, xf, 0, pincelito, fondito);
-			console.log(ladito + ': ' + l);
+		if (numLineas < 1) {
+			texoPantalla.innerHTML = 'pone un numero positivo amigx';
+		} else if (numLineas > 0) {
+			texoPantalla.innerHTML = '';
+			for (l = 0; l < numLineas; l++) {
+				yi = 300 - l * espacio;
+				xf = (l + 1) * espacio;
+				dibujarLineas(colorcito, 0, yi, xf, 0, pincelito, fondito);
+				console.log(ladito + ': ' + l);
+			}
 		}
 	} else if (ladito === 'arriba,derecha') {
-		for (l = 0; l < numLineas; l++) {
-			yi = 300 - l * espacio;
-			xf = 300 - (l + 1) * espacio;
-			dibujarLineas(colorcito, 300, yi, xf, 0, pincelito, fondito);
-			console.log(ladito + ': ' + l);
+		if (numLineas < 1) {
+			texoPantalla.innerHTML = 'pone un numero positivo amigx';
+		} else if (numLineas > 0) {
+			for (l = 0; l < numLineas; l++) {
+				yi = 300 - l * espacio;
+				xf = 300 - (l + 1) * espacio;
+				dibujarLineas(colorcito, 300, yi, xf, 0, pincelito, fondito);
+				console.log(ladito + ': ' + l);
+			}
 		}
 	} else if (ladito === 'todo') {
 		if (numLineas < 1) {
-			alert('cumpa');
+			texoPantalla.innerHTML = 'pone un numero positivoamigx';
+			document.getElementById('body').style.margin = '5px 0px 0px 0px';
 		} else {
 			for (l = 0; l <= numLineas; l++) {
 				yi = l * espacio;
 				xf = espacio * (l + 1);
 				xfDos = 300 - (l + 1) * espacio;
 				yiDos = 300 - l * espacio;
-				dibujarLineas(colorcito, 0, yi, xf, 300, pincelito);
-				dibujarLineas(colorcito, 300, yi, xfDos, 300, pincelito);
-				dibujarLineas(colorcito, 0, yiDos, xf, 0, pincelito);
-				dibujarLineas(colorcito, 300, yiDos, xfDos, 0, pincelito);
+				dibujarLineas(colorcito, 0, yi, xf, 300, pincelito, fondito);
+				dibujarLineas(colorcito, 300, yi, xfDos, 300, pincelito, fondito);
+				dibujarLineas(colorcito, 0, yiDos, xf, 0, pincelito, fondito);
+				dibujarLineas(colorcito, 300, yiDos, xfDos, 0, pincelito, fondito);
 				console.log(ladito + ': ' + l);
 			}
 		}

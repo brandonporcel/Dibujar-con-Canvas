@@ -3,28 +3,34 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>javascript</title>
+		<title>Líneas | by brandonporcel</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 		<meta name="p:domain_verify" content="548c25f3b49305b2ac0d29e9c46e4b99" />
-	</head>
-	<body>
-		<!-- 		<header class="header">
-			<div class="container">
-				<div class="overlay contenido-header">
-					<h1>Pruebas de JS</h1>
-					<p class="made-of">por brandonporcel</p>
-				</div>
-			</div>
-		</header> -->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173928765-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		<section class="toddy">
+			gtag('config', 'UA-173928765-1');
+		</script>
+	</head>
+	<body id="body">
+		<section class="toddy" id="toddy">
 			<div class="contenedor-pruebas">
 				<div class="first-test">
 					<div class="container-lineas">
 						<form class="form-lineas">
 							<p class="num-lineas">
 								<label>Cuantas líneas queres?</label>
-								<input type="number" id="input_lineas" placeholder="# de lineas" />
+								<input
+									class="input-lineas"
+									type="number"
+									id="input_lineas"
+									placeholder="# de lineas"
+								/>
 							</p>
 
 							<p class="color-lineas">
@@ -32,7 +38,7 @@
 								<input type="color" id="color" />
 							</p>
 							<p class="color-fondo">
-								<label><b>FONDO </b></label>
+								<label><b>Fondo </b></label>
 								<input type="color" id="fondo" />
 							</p>
 							<p class="lugar-lineas">
@@ -54,9 +60,19 @@
 								</select>
 							</p>
 						</form>
-						<p>
-							<input type="button" value="Dibuje Maestro" id="boton" class="boton-lineas" />
-						</p>
+						<p id="texto-resultado" class="texto-resultado"></p>
+						<div class="dibujar-actualizar">
+							<div class="act-pag" id="act-pag">
+								<input
+									type="button"
+									value="volver a dibujar"
+									onclick="javascript:window.location.reload();"
+								/>
+							</div>
+							<p>
+								<input type="button" value="Dibuje" id="boton" class="boton-lineas" />
+							</p>
+						</div>
 					</div>
 					<div class="canvas-img">
 						<canvas width="300" height="300" id="canvas_lineas"></canvas>
@@ -66,7 +82,9 @@
 		</section>
 		<footer>
 			<p>
-				presentar quejas o lo que sea a @brandonporcel en instagram. vuelva prontos
+					hecho por <span> <a href="https://instagram.com/brandonporcel">brandonporcel</a> </span>💜</a
+				> 
+				<small>culquier cosa,decime :))</small>
 			</p>
 		</footer>
 

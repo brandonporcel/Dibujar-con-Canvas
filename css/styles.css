@@ -3,12 +3,13 @@
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	background: rgb(230, 248, 244);
 }
 
 section.toddy {
-	padding-top: 50px;
+	padding-top: 10px;
 	width: 80%;
 	margin: auto;
 }
@@ -25,8 +26,7 @@ section.toddy {
 
 canvas {
 	border: 2px solid #000;
-	background: url(../img/fantasticPlanet1.gif) center no-repeat;
-	background-size: cover;
+	background: #d98232;
 }
 
 .canvas-img {
@@ -39,6 +39,7 @@ canvas {
 	justify-content: space-around;
 	padding: 10px;
 	background: #d98232;
+	margin-bottom: 10px;
 }
 .num-lineas,
 .color-lineas,
@@ -50,21 +51,10 @@ canvas {
 	font-weight: bold;
 	font-size: 20px;
 }
+.num-lineas input::placeholder {
+	text-align: center;
+}
 
-.boton-lineas {
-	height: 50px;
-	background: #d4a2be;
-	color: #222;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.4s;
-	margin: 10px;
-}
-.boton-lineas:hover {
-	background: #75597d;
-	color: #ddd;
-}
 .num-lineas {
 	background: #fa9080;
 }
@@ -82,10 +72,82 @@ canvas {
 }
 footer {
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 	font-weight: bold;
+	font-size: 25px;
+}
+footer a {
+	text-decoration: none;
+	color: #000;
+}
+footer a span:hover {
+	text-decoration: underline;
 }
 
+.texto-resultado {
+	font-weight: bold;
+	color: #000;
+	background: powderblue;
+	width: fit-content;
+	margin: auto;
+	/* 	margin-top: 10px;
+	margin-bottom: 10px; */
+}
+div.dibujar-actualizar {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+.dibujar-actualizar .act-pag {
+	height: fit-content;
+	position: absolute;
+	left: 0;
+	margin-left: 85px;
+	margin-top: 20px;
+	display: none;
+}
+.dibujar-actualizar .act-pag.active {
+	display: block;
+}
+.dibujar-actualizar .act-pag input {
+	height: 25px;
+	border: none;
+	border-radius: 5px;
+	width: 100px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: all 0.4s;
+	background: none;
+	color: #222;
+}
+.dibujar-actualizar .act-pag input:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.dibujar-actualizar .boton-lineas {
+	height: 50px;
+	background: #d4a2be;
+	color: #222;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.4s;
+	margin: 10px;
+}
+.boton-lineas:hover {
+	background: #75597d;
+	color: #ddd;
+}
+footer span:hover {
+	text-decoration: underline;
+}
+small {
+	font-size: 10px;
+	color: rgb(19, 76, 99);
+	display: flex;
+	justify-content: center;
+}
 @media screen and (max-width: 700px) {
 	body {
 		background: yellow;
@@ -148,5 +210,21 @@ footer {
 	}
 	.t-pincel {
 		background: #cbeaed;
+	}
+	.dibujar-actualizar {
+		display: flex;
+	}
+	.dibujar-actualizar .act-pag {
+		position: relative;
+		margin: auto;
+	}
+	.dibujar-actualizar .act-pag input {
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.dibujar-actualizar .act-pag input:hover {
+		color: #ffa;
 	}
 }
